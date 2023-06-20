@@ -1,5 +1,11 @@
+import os
+import sys
+module_path = os.path.abspath(os.path.join('..'))
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
 from flask import Flask, render_template, request
-from github_analysis import fetch_user_repositories, find_most_complex_repository, assess_technical_complexity
+from github_analyzer import *
 
 app = Flask(__name__)
 
